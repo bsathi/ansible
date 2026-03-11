@@ -1,5 +1,5 @@
 - name: "ping the server"
-  hosts: frontend # server group/server being pinged
+  hosts: frontend # connect to a server group/server
   # List of tasks/collections/modules
   tasks:
   - name: ping
