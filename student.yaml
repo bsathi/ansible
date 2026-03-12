@@ -1,0 +1,41 @@
+- name: "bhaskar sathi"
+  dob: "01-01-01"
+  age: 21
+  addresses:
+    # Object
+  - doorNo: 4-32
+    street: "canal road"
+    city: vizag
+    pin: 530018
+    type: current
+  
+  - doorNo: 4-32
+    street: "canal road"
+    city: vizag
+    pin: 530018
+    type: perm
+  skills:
+  - java
+  - devops
+  - cloud
+
+- name: "sunil"
+  dob: "01-01-01"
+  age: 21
+  addresses:
+    # Object
+  - doorNo: 4-32
+    street: "gandhi nagar"
+    city: vijayawada
+    pin: 534565
+    type: current
+  
+  - doorNo: 4-32
+    street: "gandhi nagar"
+    city: vijayawada
+    pin: 534565
+    type: perm
+  skills:
+  - java
+  - devops
+  - cloud
