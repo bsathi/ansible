@@ -1,0 +1,14 @@
+- name: loops
+  hosts: local
+  connection: local
+  tasks:
+  - name: print names
+    ansible.builtin.debug:
+      msg: "DevOps skills {{ item }}" # item is a reserved keyword
+    loop:
+    - Linux
+    - Git
+    - Containerization
+    - Ansible
+    - Terraform
+    - Kubernetes
