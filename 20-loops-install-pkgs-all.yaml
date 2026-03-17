@@ -1,13 +1,34 @@
-- name: Install packages
-  hosts: all
-  connection: local
+- name: Install packages using loop
+  hosts: 172.31.23.115  # Use the specific IP
   become: yes
   tasks:
-  - name: print names
-    ansible.builtin.package:
-      name: "{{ item }}"
-      state: latest
-    loop:
-    - nginx
-    - mysql
-    - zip
+    - name: Verify we are on the host and not the container
+      ansible.builtin.command: hostname
+      register: host_name
+
+    - name: Print hostname
+      ansible.builtin.debug:
+        msg: "Executing on: {{ host_name.stdout }}"
+
+    - name: install packages
+      ansible.builtin.dnf:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - nginx
+        - zip
+
+
+# - name: Install packages
+#   hosts: all
+#   connection: local
+#   become: yes
+#   tasks:
+#   - name: print names
+#     ansible.builtin.package:
+#       name: "{{ item }}"
+#       state: latest
+#     loop:
+#     - nginx
+#     - mysql
+#     - zip
